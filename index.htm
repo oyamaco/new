@@ -8,36 +8,38 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.3.5/tabletop.min.js"></script>
     <script>
 
-        $(function () {
-
-            var data = [{
-                name: 'Bernie Sanders',
-                data: [1, 13, 2, 11, 15]
-            }, {
-                name: 'Jason Segel',
-                data: [4, 1, 3, 5, 1]
-            }];
-
-            $('#container').highcharts({
-                chart: {
-                    type: 'bar'
-                },
-                title: {
-                    text: 'State Visits'
-                },
-                xAxis: {
-                    categories: ["Louisiana","Iowa","New Hampshire","South Carolina", "Ohio"]
-                },
-                yAxis: {
-                    title: {
-                        text: 'Times Visited'
-                    }
-                },
-                series: data
-            });
+    $(function () {
+        $('#container').highcharts({
+            chart: {
+                type: 'pie',
+                options3d: {
+                    enabled: true,
+                    alpha: 45
+                }
+            },
+            title: {
+                text: 'Donuts?'
+            },
+            subtitle: {
+                text: '3D donut on Donuts'
+            },
+            plotOptions: {
+                pie: {
+                    innerSize: 100,
+                    depth: 45
+                }
+            },
+            series: [{
+                name: 'Delivered amount',
+                data: [
+                    ['Dunkin Donuts', 29],
+                    ['Tim Hortons', 28],
+                    ['Krispy Kreme', 13],
+                    ['Other', 30],
+                ]
+            }]
         });
-
-
+    });
     </script>
   </head>
   <body>
